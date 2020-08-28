@@ -6,5 +6,4 @@ CREATE TABLE IF NOT EXISTS "country"
     density INTEGER,
     land_area INTEGER,
     medium_age INTEGER,
-    urban_pop VARCHAR
 );
