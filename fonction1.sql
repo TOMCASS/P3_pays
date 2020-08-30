@@ -17,8 +17,8 @@
 
 
 
-create or replace function get_country (
-  country varchar
+create or replace function get_pays (
+  pays varchar
 ) 
 	returns table (
     country varchar,
@@ -36,7 +36,7 @@ begin
 		from
 			"table_country"
 		where
-			country = ''
+			country = pays
 end;
 
 
