@@ -16,15 +16,26 @@
 SELECT * FROM "table_country"
     WHERE country = 'China';
 
+create or replace function get_country (
+  country varchar
+) 
+	returns table (
+    country varchar,
+    pop int,
+    density int, 
+    med_age int
+	
+	) 
+	language plpgsql
+as $$
+begin
+	return query 
+		select *
+    
+		from
+			"table_country"
+		where
+			country = ''
+end;
 
 
-CREATE FUNCTION pays() RETURNS pays AS '
-   
-' LANGUAGE SQL;
-  
-SELECT nettoie_emp();
-
-  nettoie_emp
-  -----------
-
-  (1 row)
