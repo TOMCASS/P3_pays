@@ -31,7 +31,7 @@ https://numidian.io/convert afin de déposer le nouveau fichier CSV épuré pré
 Puis se rendre dans ElephantSQL, onglet BACKUP, déposer le nouveau fichier CSV transformé précédemment en .sql
 
 
-4ème étape
-
+4ème étape:
+----------
 
                                                         

@@ -11,10 +11,11 @@
 -- expression scalaire	valeur scalaire renvoyée par la fonction
 
 
+-- SELECT * FROM "table_country"
+--     WHERE country = 'China';
 
 
-SELECT * FROM "table_country"
-    WHERE country = 'China';
+
 
 create or replace function get_country (
   country varchar
