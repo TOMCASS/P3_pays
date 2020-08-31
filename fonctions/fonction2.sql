@@ -17,6 +17,7 @@ FROM table_country WHERE table_country.country = pays;
 END;
 $$;
 
+---------------------------------------------------------------------------------------------------------------------------
 
 CREATE OR replace FUNCTION categories () 
 RETURNS TABLE (country TEXT,density INT, tranche TEXT)
