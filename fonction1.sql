@@ -11,19 +11,21 @@
 -- expression scalaire	valeur scalaire renvoyée par la fonction
 
 
--- SELECT * FROM "table_country"
---     WHERE country = 'China';
+-- 1ere requete: 
 
+SELECT * FROM "table_country"
+    WHERE country = 'China';
 
+-- Mise en fonction:
 
-
-create or replace function get_pays (pays varchar) 
-returns table (country varchar,pop int, density int, med_age int)
+create or replace function get_pays (pays text) 
+returns table (country text,pop int, density int, med_age text)
 language plpgsql
 as $$
 begin
 return query 
-select * from table_country where country = pays
+select * from table_country where table_country.country = pays;
 end;
+$$;
 
 
