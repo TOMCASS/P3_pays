@@ -2,22 +2,22 @@
 
 
 
-__**Les pays en chiffre**__
+# Les pays en chiffre
 
 
-# 1ère étape:
+**1ère étape**
 
-===> Se rendre sur <https://www.elephantsql.com/ > :
+===> Se rendre sur https://www.elephantsql.com/ :
 
                                                             - créer un compte ou se connecter
                                                             - choisir un serveur (dans mon cas Europe => Irlande, car gratuit)
 
 
-# 2ème étape:
+**2ème étape**
 
 ===> Nettoyage des différentes catégories du fichier CSV :  
                                                             - enlever les colonnes inutiles :
-                                                                                                - Yearly Change,
+                                                                                                - Yearly Change
                                                                                                 - Net Change
                                                                                                 - Density 
                                                                                                 - Land Area
@@ -34,18 +34,18 @@ __**Les pays en chiffre**__
 
 
 
-# 3ème étape:  
+**3ème étape** 
 
 ===> convertion du fichier CSV
 
-Un moyen pratique est de se rendre sur : 
-https://numidian.io/convert afin de déposer le nouveau fichier CSV épuré précedemment.
+Un moyen pratique est de se rendre sur : <br/>
+https://numidian.io/convert afin de déposer le nouveau fichier CSV épuré précedemment.<br/>
 (On demandera bien entendu une convertion de celui-ci au format SQL)
 
 Puis se rendre dans ElephantSQL, onglet BACKUP, déposer le nouveau fichier CSV transformé précédemment en .sql
 
 
-# 4ème étape:
+**4ème étape**
 
 
                                                         
