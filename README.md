@@ -16,17 +16,8 @@
 **2ème étape**
 
 ===> Nettoyage des différentes catégories du fichier CSV :  
-                                                            - enlever les colonnes inutiles :
-                                                                                                - Yearly Change
-                                                                                                - Net Change
-                                                                                                - Density 
-                                                                                                - Land Area
-                                                                                                - Migrants 
-                                                                                                - Fert. Rate
-                                                                                                - Med. Age
-                                                                                                - Urban Pop 
-                                                                                                - World Share
-
+                                                            - enlever les colonnes inutiles (Yearly Change,Net Change, Land Area (Km²),Migrants (net),Fert. Rate,Med. Age,Urban Pop %,World Share)
+                                        
                                                             - Pour les titres des colonnes restantes (country,pop,density), remplacer les majuscules par des minuscules. 
 
                                                             - remplacer les espaces par des underscore (titres des colonnes)
