@@ -87,14 +87,14 @@ FROM table_country WHERE table_country.country = pays;
 END;
 $$;
 
--- Derrière je fais INTervenir ma fonction avec pour exemple la france
+-- Derrière je fais intervenir ma fonction avec pour exemple la france
 
 SELECT * FROM categories('France')
 
 
 -- Pour tout les pays: 
 
-CREATE OR replace FUNCTION categORies () 
+CREATE OR replace FUNCTION categories () 
 RETURNS TABLE (country TEXT,density INT, tranche TEXT)
 LANGUAGE plpgsql
 AS $$
