@@ -17,26 +17,13 @@
 
 
 
-create or replace function get_pays (
-  pays varchar
-) 
-	returns table (
-    country varchar,
-    pop int,
-    density int, 
-    med_age int
-	
-	) 
-	language plpgsql
+create or replace function get_pays (pays varchar) 
+returns table (country varchar,pop int, density int, med_age int)
+language plpgsql
 as $$
 begin
-	return query 
-		select *
-    
-		from
-			"table_country"
-		where
-			country = pays
+return query 
+select * from table_country where country = pays
 end;
 
 
