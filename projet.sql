@@ -108,3 +108,7 @@ ELSE 'tranche1' END AS tranche
 FROM table_country;
 END;
 $$;
+
+-- Derrière je fais intervenir ma fonction
+
+SELECT * FROM categories()
