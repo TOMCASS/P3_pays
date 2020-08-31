@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 "country" TEXT NULL,
 "pop" INT NULL,
 "density" INT NULL,
-"med_age" TEXT NULL
+"med_age" INT NULL
 );
 
 INSERT INTO table_country VALUES
