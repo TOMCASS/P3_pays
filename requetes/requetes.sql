@@ -3,7 +3,7 @@
 
 
 -- 1. Pour afficher l'integralité de la table (affinée tout de même) :		
-
+ 
 SELECT * FROM "public"."table_country" LIMIT 300
 
 -- 2. Pour afficher la ligne cmplète d'un pays (ici la Chine)
