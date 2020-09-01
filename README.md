@@ -1,8 +1,8 @@
 
 
-[center]# Les pays en chiffre<br/>[/center]
- 
 
+ 
+# Les pays en chiffre<br/>
 
 
 ## Sommaire
@@ -13,8 +13,8 @@
                     
                 - a : Création de la table
                 - b : Création de la 1ère fonction
-                - c : Configuration du Trigger
-                - d : Création de la 2ème fonction
+                - c : Création de la 2ème fonction
+                - d : Configuration du Trigger
                 - e : Insérer les données de notre table
 
 
