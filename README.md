@@ -44,11 +44,22 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 2.  Puis, il va falloir insérer les données de notre table : 
     Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
-3.  Imports des fonctions : 
-                                
-                                - 1. Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère  passé en paramètre. Ce paramètre est le nom du pays
-                                - 2. Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
+3.  Imports de la fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère  passé en paramètre. 
+    Ce paramètre est le nom du pays : 
 
+    ```SQL
+    CREATE OR replace FUNCTION get_pays (pays TEXT) 
+    RETURNS TABLE (country TEXT,pop INT, density INT)
+    LANGUAGE plpgsql
+    AS $$
+    BEGIN
+    RETURN query 
+    SELECT table_country.country,table_country.pop,table_country.density FROM table_country WHERE table_country.country = pays;
+    END;
+    $$;
+    ```
+                                
+        
 
 
 
