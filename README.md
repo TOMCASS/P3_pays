@@ -9,8 +9,8 @@
 
 1. #### Description
 2. #### Prérequis
-3. #### Installation:
-                    
+3. #### Installation
+
                 - a : Création de la table
                 - b : Création de la 1ère fonction
                 - c : Création de la 2ème fonction
@@ -163,7 +163,7 @@ Pour celà il suffit de vous rendre sur le lien : <br/>
 -----------------------------------------------------------------------------------------------------------------------------
 
 
-* Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
+* Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete (on précise 300 pour avoir l'intgralité des pays):
 
 ```SQL
 SELECT * FROM "public"."table_country" LIMIT 300
