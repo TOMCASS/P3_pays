@@ -176,13 +176,13 @@ Pour cela il suffit de vous rendre sur le lien : <br/>
 
 __a.__
 
-Pour afficher le contenue de notre "table_country" il suffit d'exécuter la requête (on précise 300 pour avoir l'intgralité des pays):
+Requête a effectuer pour afficher le contenue de notre "table_country" il suffit d'exécuter la requête (on précise 300 pour avoir l'intgralité des pays):
 
 ```SQL
 SELECT * FROM "public"."table_country" LIMIT 300
 ```
 
-Pour afficher la ligne complète d'un pays (ici la Chine)
+Requête a effectuer pour afficher la ligne complète d'un pays (ici la Chine)
 
 ```SQL
 SELECT * FROM "table_country"
@@ -191,7 +191,7 @@ WHERE country = 'China';
 
 __b.__
 
-Requête à effectuer pour executer la 1ère fonction établie (ici la France)
+Requête à effectuer pour afficher la 1ère fonction établie (ici la France)
 
 ```SQL
 SELECT * FROM get_pays('France')
@@ -199,21 +199,21 @@ SELECT * FROM get_pays('France')
 
 __c.__
 
-Requête à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
+Requête à effectuer pour executer la procedure précedemment établie (ici le nouveau pays la 'Cool-Zanie')
 
 ```SQL
-CALL insert_data('Coolzanie')
+CALL insert_data('Cool-Zanie')
 ```
 
 __d.__
 
-Requête à effectuer pour executer la 2ème fonction établie (ici la France)
+Requête à effectuer pour afficher la 2ème fonction établie (ici le nouveau pays la 'Cool-Zanie')
 
 ```SQL
-SELECT * FROM categories('France')
+SELECT * FROM categories('Cool-Zanie')
 ```
 
-* Requête à effectuer pour executer la 2ème fonction établie (ici tout les pays de la table "table_country")
+* Requête à effectuer pour afficher la 2ème fonction établie (ici tout les pays de la table "table_country")
 
 ```SQL
 SELECT * FROM categories()
