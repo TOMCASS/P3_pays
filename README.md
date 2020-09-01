@@ -27,7 +27,9 @@ Vous devez:
 
 **Installation**
 
-1.  Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
+__1.__  
+    
+    Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
     Entrez cette instruction puis éxecutez la grâce au bouton "execute" : 
 
     ```SQL
@@ -39,10 +41,14 @@ Vous devez:
     );
     ```
 
-2.  __Il va falloir maintenant insérer les données de notre table :__ 
+__2.__  
+
+    __Il va falloir maintenant insérer les données de notre table :__
     Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
-3.  Nous allons maintenant importer la fonction SQL ci dessous qui retourne le pays (sous format de TABLE) 
+__3.__  
+    
+    Nous allons maintenant importer la fonction SQL ci dessous qui retourne le pays (sous format de TABLE) 
     qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
 
     ```SQL
@@ -57,7 +63,9 @@ Vous devez:
     $$;
     ```  
                                 
-4.  Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
+__4.__  
+    
+    Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
     date de l'insertion.
     Tout dabord la création d'une fonction : 
 
@@ -78,7 +86,9 @@ Vous devez:
     FOR EACH ROW EXECUTE PROCEDURE data_upload();
     ```
 
-5.  Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
+__5.__
+    
+    Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
     de densité de population:
 
     ```SQL
