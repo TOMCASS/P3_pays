@@ -4,8 +4,21 @@
  
 # Les pays en chiffre
 
+**0. Sommaire**
+1. Description
+2. Prérequis
+3. Installation:
+                    - a : Création de la table
+                    - b : Insérer les données de notre table
+                    - c : Création de la 1ère fonction
+                    - d : Configuration du Trigger
+                    - e : Création de la 2ème fonction
 
-**Description du projet**
+
+4. Utilisation / Usage
+
+
+**1. Description du projet**
 
 **Vous devez choisir les outils à utiliser, le python n'est pas autorisé il faut utiliser seulement le langage SQL avec la base de données PostgreSql. Vous devez impérativement passer par le SAAS elephantsql (version gratuite)**
 
@@ -17,7 +30,9 @@
                 - Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
 
 
-**1. Prérequis**
+
+
+**2. Prérequis**
 
 Vous devez: 
 
@@ -25,7 +40,7 @@ Vous devez:
             - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
 
 
-**2. Installation**
+**3. Installation**
 
 __a.__  
     
@@ -127,7 +142,7 @@ $$;
 ```
 
 
-**3. Utilisation** 
+**4. Utilisation / Usage** 
 
 Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
 
@@ -139,7 +154,6 @@ Ensuite
 
 
 
-**4. Usage** 
 
 
 
