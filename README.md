@@ -17,7 +17,7 @@
                 - Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
 
 
-**Prérequis**
+**1. Prérequis**
 
 Vous devez: 
 
@@ -25,9 +25,9 @@ Vous devez:
             - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
 
 
-**Installation**
+**2. Installation**
 
-__1.__  
+__a.__  
     
 Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
 Entrez cette instruction puis éxecutez la grâce au bouton "execute" : 
@@ -41,12 +41,12 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 );
 ```
 
-__2.__  
+__b.__  
 
 Il va falloir maintenant insérer les données de notre table :
 Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
-__3.__  
+__c.__  
     
 Nous allons maintenant importer la fonction SQL ci dessous qui retourne le pays (sous format de TABLE) 
 qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
@@ -63,7 +63,7 @@ END;
 $$;
 ```  
                                 
-__4.__  
+__d.__  
     
 Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
 date de l'insertion.
@@ -86,7 +86,7 @@ CREATE TRIGGER data_upload BEFORE INSERT OR UPDATE ON table_country
 FOR EACH ROW EXECUTE PROCEDURE data_upload();
 ```
 
-__5.__
+__e.__
     
 Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
 de densité de population:
@@ -127,7 +127,7 @@ $$;
 ```
 
 
-**Utilisation** 
+**3. Utilisation** 
 
 Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
 
@@ -139,7 +139,7 @@ Ensuite
 
 
 
-**Usage** 
+**4. Usage** 
 
 
 
