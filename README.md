@@ -17,7 +17,7 @@
                 - e : Création de la 2ème fonction
 
 
-4. Utilisation / Usage
+4. #### Utilisation / Usage
 
 
 **1. Description du projet**
