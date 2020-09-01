@@ -1,14 +1,14 @@
 
 
 
-pré requis 
+ 
 installation
 démarrage / usage
 
 # Les pays en chiffre
 
 
-**Description**
+**Description du projet**
 
 Vous devez choisir les outils à utiliser, le python n'est pas autorisé il faut utiliser seulement le langage SQL avec la base de données PostgreSql
 
@@ -22,6 +22,25 @@ Vous devez :
                 - Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
 
 
+**Prérequis**
+
+Vous devez: 
+
+                - Avoir un compte sur https://www.elephantsql.com/ 
+                - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
+
+
+**Installation**
+
+Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
+Entrez cette instruction puis éxecutez la grâce au bouton "execute" : 
+
+```CREATE TABLE IF NOT EXISTS "table_country" (
+"country" TEXT NULL,
+"pop" INT NULL,
+"density" INT NULL,
+"upload" TIMESTAMP
+);```
 
 
 
@@ -31,39 +50,6 @@ Vous devez :
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-===> Se rendre sur https://www.elephantsql.com/ :
-
-                                                                - créer un compte ou se connecter
-                                                                - choisir un serveur (dans mon cas Europe => Irlande, car gratuit)
 
 
 **2ème étape**
