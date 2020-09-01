@@ -41,7 +41,8 @@
 **Vous devez :**
 
                 - Avoir un compte sur https://www.elephantsql.com/ 
-                - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
+                - Avoir créé une instance toujours sur https://www.elephantsql.com/
+                
 
 
 **3. Installation**
@@ -50,7 +51,7 @@
 __a.__  
     
 Une fois votre compte créé et votre instance initialisée, rendez-vous dans l'onglet " Browser" de ElephantSQL.
-Entrez cette instruction puis éxecutez-la grâce au bouton "execute" : 
+Entrez cette instruction pur créer notre table, puis éxecutez-la grâce au bouton "execute" : 
 
 ```SQL
 CREATE TABLE IF NOT EXISTS "table_country" (
@@ -61,9 +62,26 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 );
 ```
 
-__b.__  
+__b.__ 
 
-Enfin nous allons créer une fonction permettant de retourner les pays qui seront regroupés par tranches de 4 (à definir)
+Nous allons maintenant importer la procédure SQL ci-dessous qui retourne le pays (sous format de TABLE) 
+qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
+
+```SQL
+CREATE OR replace FUNCTION get_pays (pays TEXT) 
+RETURNS TABLE (country TEXT,pop INT, density INT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+RETURN query 
+SELECT table_country.country,table_country.pop,table_country.density FROM table_country WHERE table_country.country = pays;
+END;
+$$;
+```  
+
+__c.__
+
+Nous allons créer une fonction permettant de retourner les pays qui seront regroupés par tranches de 4 (à definir)
 de densité de population:
 
 ```SQL
@@ -82,7 +100,7 @@ FROM table_country;
 END;
 $$;
 ```
-*On peut aussi créer la même fonction mais pour un seul pays de notre choix :*
+*On peut aussi créer la même fonction mais pour un seul pays (de notre choix) :*
 
 ```SQL
 CREATE OR replace function categories (pays TEXT) 
@@ -100,24 +118,11 @@ FROM table_country WHERE table_country.country = pays;
 END;
 $$;
 ```
+__d.__
 
-__c.__  
-    
-Nous allons maintenant importer la procédure SQL ci-dessous qui retourne le pays (sous format de TABLE) 
-qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
-
-```SQL
-CREATE OR replace FUNCTION get_pays (pays TEXT) 
-RETURNS TABLE (country TEXT,pop INT, density INT)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-RETURN query 
-SELECT table_country.country,table_country.pop,table_country.density FROM table_country WHERE table_country.country = pays;
-END;
-$$;
-```  
-Puis nous mettons en place le trigger :
+Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
+date de l'insertion.
+Tout d'abord la création d'une fonction :
 
 ```SQL
 CREATE OR replace PROCEDURE insert_data(pays TEXT)
@@ -128,36 +133,13 @@ INSERT INTO table_country(country,pop,density) VALUES (pays, random() * 10000, r
 END;
 $$;
 ```
-                                
-__d.__  
-    
-Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
-date de l'insertion.
-Tout d'abord la création d'une fonction : 
 
-```SQL
-CREATE OR REPLACE FUNCTION data_upload() RETURNS trigger
-LANGUAGE plpgsql
-AS $$
-BEGIN
-NEW.upload := current_timestamp;
-RETURN NEW;
-END;
-$$;
-```
-Puis nous allons importer notre Trigger après avoir exécuté la fonction ci-dessus : 
+Puis nous allons importer notre Trigger après avoir exécuté la fonction ci-dessus :
 
 ```SQL
 CREATE TRIGGER data_upload BEFORE INSERT OR UPDATE ON table_country      
 FOR EACH ROW EXECUTE PROCEDURE data_upload();
 ```
-
-__e.__
-
-Il va falloir maintenant insérer les données de notre table :
-Pour cela il suffit de vous rendre sur le lien : <br/>
-[insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'exécuter.
-
 
 **4. Utilisation / Usage** 
 -----------------------------------------------------------------------------------------------------------------------------
