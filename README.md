@@ -79,8 +79,24 @@ CREATE TABLE IF NOT EXISTS "table_country" (
     ```
 
 5.  Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
-    de densité de population
+    de densité de population:
 
+    ```SQL
+    CREATE OR replace FUNCTION categories () 
+    RETURNS TABLE (country TEXT,pop INT, density INT, tranche TEXT)
+    LANGUAGE plpgsql
+    AS $$
+    BEGIN
+    RETURN query 
+    SELECT table_country.country, table_country.pop, table_country.density, CASE
+    WHEN table_country.density > 500 THEN 'tranche4'
+    WHEN table_country.density > 400 THEN 'tranche3'
+    WHEN table_country.density > 300 THEN 'tranche2'
+    ELSE 'tranche1' END AS tranche
+    FROM table_country;
+    END;
+    $$;
+    ```
 
 
 
