@@ -4,7 +4,7 @@
  
 # Les pays en chiffre
 
-**0. Sommaire**
+**Sommaire**
 1. Description
 2. Prérequis
 3. Installation:
