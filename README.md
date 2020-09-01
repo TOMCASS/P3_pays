@@ -46,7 +46,10 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 
 3.  Imports des fonctions : 
                                 
-                                - Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère  passé en paramètre. Ce paramètre est le nom du pays
+                                - 1. Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère  passé en paramètre. Ce paramètre est le nom du pays
+                                - 2. Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
+
+1.
 
 ```SQL
 CREATE OR replace FUNCTION get_pays (pays TEXT) 
