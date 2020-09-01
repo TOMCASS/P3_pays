@@ -13,9 +13,10 @@
 
                 - a : Création de la table
                 - b : Création de la 1ère fonction
-                - c : Création de la 2ème fonction
-                - d : Configuration du Trigger
-                - e : Insérer les données de notre table
+                - c : Création de la procédure 
+                - d : Création de la 2ème fonction
+                - e : Configuration du Trigger
+                - f : Insérer les données de notre table
 
 
 4. #### Utilisation / Usage<br/>
@@ -81,6 +82,22 @@ $$;
 
 __c.__
 
+Nous allons maintenant importer la procédure SQL ci-dessous qui retourne le pays (sous format de TABLE) 
+qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays :
+
+```SQL
+CREATE OR replace PROCEDURE insert_data(pays TEXT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+INSERT INTO table_country(country,pop,density) VALUES (pays, random() * 10000, random() * 10000);
+END;
+$$;
+```
+
+
+__d.__
+
 Nous allons créer une fonction permettant de retourner les pays qui seront regroupés par tranches de 4 (à definir)
 de densité de population:
 
@@ -118,7 +135,7 @@ FROM table_country WHERE table_country.country = pays;
 END;
 $$;
 ```
-__d.__
+__e.__
 
 Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
 date de l'insertion.
@@ -141,7 +158,7 @@ CREATE TRIGGER data_upload BEFORE INSERT OR UPDATE ON table_country
 FOR EACH ROW EXECUTE PROCEDURE data_upload();
 ```
 
-__e.__
+__f.__
 
 Il va falloir maintenant insérer les données de notre table :
 Pour cela il suffit de vous rendre sur le lien : <br/>
