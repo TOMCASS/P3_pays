@@ -2,7 +2,7 @@
 
 
  
-# Les pays en chiffre<br/><br/><br/>
+# Les pays en chiffre<br/>
 
 ## Sommaire
 
@@ -17,11 +17,8 @@
                 - e : Insérer les données de notre table
 
 
-4. #### Utilisation / Usage
+4. #### Utilisation / Usage<br/><br/><br/>
   
-    
-      
-
 
 **1. Description du projet**
 
