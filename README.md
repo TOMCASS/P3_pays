@@ -47,17 +47,17 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 3.  Imports des fonctions : 
                                 - Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays
 
-                                ```SQL
-                                CREATE OR replace FUNCTION get_pays (pays TEXT) 
-                                RETURNS TABLE (country TEXT,pop INT, density INT)
-                                LANGUAGE plpgsql
-                                AS $$
-                                BEGIN
-                                RETURN query 
-                                SELECT table_country.country,table_country.pop,table_country.density FROM table_country WHERE table_country.country = pays;
-                                END;
-                                $$;
-                                ```
+```SQL
+CREATE OR replace FUNCTION get_pays (pays TEXT) 
+RETURNS TABLE (country TEXT,pop INT, density INT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+RETURN query 
+SELECT table_country.country,table_country.pop,table_country.density FROM table_country WHERE table_country.country = pays;
+END;
+$$;
+```
 
 
 
