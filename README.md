@@ -7,9 +7,7 @@
 
 **Description du projet**
 
-**Vous devez choisir les outils à utiliser, le python n'est pas autorisé il faut utiliser seulement le langage SQL avec la base de données PostgreSql**
-
-**Vous devez impérativement passer par le SAAS elephantsql (version gratuite)**
+**Vous devez choisir les outils à utiliser, le python n'est pas autorisé il faut utiliser seulement le langage SQL avec la base de données PostgreSql. Vous devez impérativement passer par le SAAS elephantsql (version gratuite)**
 
 **Vous devez :**
 
