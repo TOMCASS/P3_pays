@@ -2,9 +2,6 @@
 
 
  
-
-démarrage / usage
-
 # Les pays en chiffre
 
 
@@ -47,14 +44,18 @@ Puis, il va falloir insérer les données de notre table :
 Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
 
+**Demarage** 
+
+Pour afficher le contenue de notre "table_country" il suffit d'éxecuter :
+
+```SQL
+SELECT * FROM "public"."table_country" LIMIT 300
+```
 
 
 
 
-
-
-
-
+**Usage** 
 
 
 
