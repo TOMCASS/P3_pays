@@ -1,8 +1,8 @@
 
 
-
+[center]# Les pays en chiffre<br/>[/center]
  
-# Les pays en chiffre<br/>
+
 
 
 ## Sommaire
@@ -103,7 +103,7 @@ $$;
 
 __c.__  
     
-Nous allons maintenant importer la fonction SQL ci dessous qui retourne le pays (sous format de TABLE) 
+Nous allons maintenant importer la procèdure SQL ci dessous qui retourne le pays (sous format de TABLE) 
 qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
 
 ```SQL
