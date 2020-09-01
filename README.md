@@ -21,10 +21,10 @@
 
 4. #### Utilisation / Usage
 
-                - a2 / a3 : Requête pour afficher le contenue de notre table / afficher la ligne complète d'un pays
-                - b2 : Requête à effectuer pour executer la 1ère fonction établie 
-                - c2 : Requête à effectuer pour executer la procedure précedemment établie
-                - d2 : Requête à effectuer pour executer la 2ème fonction établie
+                - a : Requête pour afficher le contenue de notre table / afficher la ligne complète d'un pays
+                - b : Requête à effectuer pour executer la 1ère fonction établie 
+                - c : Requête à effectuer pour executer la procedure précedemment établie
+                - d : Requête à effectuer pour executer la 2ème fonction établie
 <br/><br/>
 
 **1. Description du projet**
@@ -174,14 +174,13 @@ Pour cela il suffit de vous rendre sur le lien : <br/>
 **4. Utilisation / Usage** 
 -----------------------------------------------------------------------------------------------------------------------------
 
-__a2.__
+__a.__
 
 Pour afficher le contenue de notre "table_country" il suffit d'exécuter la requête (on précise 300 pour avoir l'intgralité des pays):
 
 ```SQL
 SELECT * FROM "public"."table_country" LIMIT 300
 ```
-__a3.__
 
 Pour afficher la ligne complète d'un pays (ici la Chine)
 
@@ -190,7 +189,7 @@ SELECT * FROM "table_country"
 WHERE country = 'China';
 ```
 
-__b2.__
+__b.__
 
 Requête à effectuer pour executer la 1ère fonction établie (ici la France)
 
@@ -198,7 +197,7 @@ Requête à effectuer pour executer la 1ère fonction établie (ici la France)
 SELECT * FROM get_pays('France')
 ```
 
-__c2.__
+__c.__
 
 Requête à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
 
@@ -206,7 +205,7 @@ Requête à effectuer pour executer la procedure précedemment établie (ici le 
 CALL insert_data('Coolzanie')
 ```
 
-__d2.__
+__d.__
 
 Requête à effectuer pour executer la 2ème fonction établie (ici la France)
 
