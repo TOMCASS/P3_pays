@@ -9,11 +9,11 @@
 2. Prérequis
 3. Installation:
                     
-                    - a : Création de la table
-                    - b : Insérer les données de notre table
-                    - c : Création de la 1ère fonction
-                    - d : Configuration du Trigger
-                    - e : Création de la 2ème fonction
+                - a : Création de la table
+                - b : Insérer les données de notre table
+                - c : Création de la 1ère fonction
+                - d : Configuration du Trigger
+                - e : Création de la 2ème fonction
 
 
 4. Utilisation / Usage
