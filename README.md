@@ -199,6 +199,7 @@ SELECT * FROM categories('France')
 SELECT * FROM categories()
 ```
 
+#### Merci d'avoir lu mon README :-)
 
 
 
