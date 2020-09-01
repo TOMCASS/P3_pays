@@ -45,7 +45,8 @@ CREATE TABLE IF NOT EXISTS "table_country" (
     Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
 3.  Imports des fonctions : 
-                                - Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays
+                                
+                                - Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère  passé en paramètre. Ce paramètre est le nom du pays
 
 ```SQL
 CREATE OR replace FUNCTION get_pays (pays TEXT) 
