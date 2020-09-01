@@ -82,7 +82,7 @@ FROM table_country;
 END;
 $$;
 ```
-__On peut aussi créer la même fonction mais pour un seul pays de notre choix :__
+*On peut aussi créer la même fonction mais pour un seul pays de notre choix :*
 
 ```SQL
 CREATE OR replace function categories (pays TEXT) 
