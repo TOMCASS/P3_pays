@@ -7,6 +7,7 @@
 -----------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------
 
+
 ## Sommaire
 
 1. #### Description
@@ -26,6 +27,7 @@
 -----------------------------------------------------------------------------------------------------------------------------
 
 **1. Description du projet**
+-----------------------------------------------------------------------------------------------------------------------------
 
 **Vous devez choisir les outils à utiliser, le python n'est pas autorisé il faut utiliser seulement le langage SQL avec la base de données PostgreSql. Vous devez impérativement passer par le SAAS elephantsql (version gratuite)**
 
@@ -36,18 +38,19 @@
                 - Configurer un trigger qui va mettre à jour la colonne de la table correspondant à la date de l'insertion
                 - Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
 
------------------------------------------------------------------------------------------------------------------------------
+
 
 **2. Prérequis**
+-----------------------------------------------------------------------------------------------------------------------------
 
 Vous devez: 
 
             - Avoir un compte sur https://www.elephantsql.com/ 
             - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
 
------------------------------------------------------------------------------------------------------------------------------
 
 **3. Installation**
+-----------------------------------------------------------------------------------------------------------------------------
 
 __a.__  
     
@@ -157,12 +160,13 @@ FOR EACH ROW EXECUTE PROCEDURE data_upload();
 __e.__
 
 Il va falloir maintenant insérer les données de notre table :
-Pour celà il suffit de vous rendre sur : <br/>
+Pour celà il suffit de vous rendre sur le lien : <br/>
 [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
------------------------------------------------------------------------------------------------------------------------------
 
 **4. Utilisation / Usage** 
+-----------------------------------------------------------------------------------------------------------------------------
+
 
 * Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
 
