@@ -17,7 +17,7 @@
                 - Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
 
 
-__***Prérequis***__
+**Prérequis**
 
 Vous devez: 
 
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS "table_country" (
     SELECT table_country.country,table_country.pop,table_country.density FROM table_country WHERE table_country.country = pays;
     END;
     $$;
-    ```
+    ```  
                                 
 4.  Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
     date de l'insertion.
