@@ -145,15 +145,41 @@ $$;
 
 **4. Utilisation / Usage** 
 
-Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
+* Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
 
 ```SQL
 SELECT * FROM "public"."table_country" LIMIT 300
 ```
+* Pour afficher la ligne cmplète d'un pays (ici la Chine)
 
+```SQL
+SELECT * FROM "table_country"
+WHERE country = 'China';
+```
 
+* Requete à effectuer pour executer la 1ère fonction établie (ici la France)
 
+```SQL
+SELECT * FROM get_pays('France')
+```
 
+* Requete à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
+
+```SQL
+CALL insert_data('Coolzanie')
+```
+
+* Requete à effectuer pour executer la 2ème fonction établie (ici la France)
+
+```SQL
+SELECT * FROM categories('France')
+```
+
+* Requete à effectuer pour executer la 2ème fonction établie (ici tout les pays de la table "table_country")
+
+```SQL
+SELECT * FROM categories()
+```
 
 
 
