@@ -2,7 +2,7 @@
 
 
  
-installation
+
 démarrage / usage
 
 # Les pays en chiffre
@@ -43,7 +43,11 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 "upload" TIMESTAMP
 );
 ```
+Puis, il va falloir insérer les données de notre table : 
+Pour celà il suffit de vous rendre dans le dossier nommé "creation_table", puis ouvrir le fichier nommé "insert_into.sql".
+Il ne vous reste plus qu'à copier l'intégralité du contenu du fichier "insert_into.sql" dans ElephantSQL et l'éxecuter.
 
+[fichier insert into] (https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql)
 
 
 
