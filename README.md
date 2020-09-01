@@ -19,8 +19,13 @@
                 - f : Insérer les données de notre table
 
 
-4. #### Utilisation / Usage<br/>
-  
+4. #### Utilisation / Usage
+
+                - a2 / a3 : Requête pour afficher le contenue de notre table / afficher la ligne complète d'un pays
+                - b2 : Requête à effectuer pour executer la 1ère fonction établie 
+                - c2 : Requête à effectuer pour executer la procedure précedemment établie
+                - d2 : Requête à effectuer pour executer la 2ème fonction établie
+<br/><br/>
 
 **1. Description du projet**
 -----------------------------------------------------------------------------------------------------------------------------
@@ -169,32 +174,41 @@ Pour cela il suffit de vous rendre sur le lien : <br/>
 **4. Utilisation / Usage** 
 -----------------------------------------------------------------------------------------------------------------------------
 
+__a2.__
 
-* Pour afficher le contenue de notre "table_country" il suffit d'exécuter la requête (on précise 300 pour avoir l'intgralité des pays):
+Pour afficher le contenue de notre "table_country" il suffit d'exécuter la requête (on précise 300 pour avoir l'intgralité des pays):
 
 ```SQL
 SELECT * FROM "public"."table_country" LIMIT 300
 ```
-* Pour afficher la ligne complète d'un pays (ici la Chine)
+__a3.__
+
+Pour afficher la ligne complète d'un pays (ici la Chine)
 
 ```SQL
 SELECT * FROM "table_country"
 WHERE country = 'China';
 ```
 
-* Requête à effectuer pour executer la 1ère fonction établie (ici la France)
+__b2.__
+
+Requête à effectuer pour executer la 1ère fonction établie (ici la France)
 
 ```SQL
 SELECT * FROM get_pays('France')
 ```
 
-* Requête à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
+__c2.__
+
+Requête à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
 
 ```SQL
 CALL insert_data('Coolzanie')
 ```
 
-* Requête à effectuer pour executer la 2ème fonction établie (ici la France)
+__d2.__
+
+Requête à effectuer pour executer la 2ème fonction établie (ici la France)
 
 ```SQL
 SELECT * FROM categories('France')
