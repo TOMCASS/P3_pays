@@ -21,8 +21,8 @@
 
 Vous devez: 
 
-                - Avoir un compte sur https://www.elephantsql.com/ 
-                - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
+            - Avoir un compte sur https://www.elephantsql.com/ 
+            - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
 
 
 **Installation**
@@ -30,14 +30,14 @@ Vous devez:
 1.  Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
     Entrez cette instruction puis éxecutez la grâce au bouton "execute" : 
 
-```SQL
-CREATE TABLE IF NOT EXISTS "table_country" (
-"country" TEXT NULL,
-"pop" INT NULL,
-"density" INT NULL,
-"upload" TIMESTAMP
-);
-```
+    ```SQL
+    CREATE TABLE IF NOT EXISTS "table_country" (
+    "country" TEXT NULL,
+    "pop" INT NULL,
+    "density" INT NULL,
+    "upload" TIMESTAMP
+    );
+    ```
 
 2.  Il va falloir maintenant insérer les données de notre table : 
     Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
