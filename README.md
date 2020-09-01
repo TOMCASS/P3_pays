@@ -39,7 +39,7 @@ Vous devez:
     );
     ```
 
-2.  Il va falloir maintenant insérer les données de notre table : 
+2.  __Il va falloir maintenant insérer les données de notre table :__ 
     Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
 3.  Nous allons maintenant importer la fonction SQL ci dessous qui retourne le pays (sous format de TABLE) 
@@ -97,7 +97,7 @@ Vous devez:
     END;
     $$;
     ```
-    On peux aussi créer la même fonction mais pour un seul pays de notre choix : 
+    __On peux aussi créer la même fonction mais pour un seul pays de notre choix :__
 
     ```SQL
     CREATE OR replace function categories (pays TEXT) 
