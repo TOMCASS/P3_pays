@@ -41,11 +41,11 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 );
 ```
 
-2.  Puis, il va falloir insérer les données de notre table : 
+2.  Il va falloir maintenant insérer les données de notre table : 
     Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
-3.  Imports de la fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère  passé en paramètre. 
-    Ce paramètre est le nom du pays : 
+3.  Nous allons maintenant importer la fonction SQL ci dessous qui retourne le pays (sous format de TABLE) 
+    qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
 
     ```SQL
     CREATE OR replace FUNCTION get_pays (pays TEXT) 
@@ -59,7 +59,26 @@ CREATE TABLE IF NOT EXISTS "table_country" (
     $$;
     ```
                                 
-        
+4.  Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
+    date de l'insertion.
+    Tout dabord la création d'une fonction : 
+
+    ```SQL
+    CREATE OR REPLACE FUNCTION data_upload() RETURNS trigger
+    LANGUAGE plpgsql
+    AS $$
+    BEGIN
+    NEW.upload := current_timestamp;
+    RETURN NEW;
+    END;
+    $$;
+    ```
+    Puis nous allons importer notre Trigger après avoir éxecuter la fonction ci-dessus : 
+
+    ```SQL
+    CREATE TRIGGER data_upload BEFORE INSERT OR UPDATE ON table_country      
+    FOR EACH ROW EXECUTE PROCEDURE data_upload();
+    ```
 
 
 
