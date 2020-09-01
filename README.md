@@ -147,11 +147,10 @@ $$;
 
 Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
 
-    ```SQL
-    SELECT * FROM "public"."table_country" LIMIT 300
-    ```
+```SQL
+SELECT * FROM "public"."table_country" LIMIT 300
+```
 
-Ensuite 
 
 
 
