@@ -11,10 +11,10 @@
 3. #### Installation:
                     
                 - a : Création de la table
-                - b : Insérer les données de notre table
-                - c : Création de la 1ère fonction
-                - d : Configuration du Trigger
-                - e : Création de la 2ème fonction
+                - b : Création de la 1ère fonction
+                - c : Configuration du Trigger
+                - d : Création de la 2ème fonction
+                - e : Insérer les données de notre table
 
 
 4. #### Utilisation / Usage
@@ -60,8 +60,43 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 
 __b.__  
 
-Il va falloir maintenant insérer les données de notre table :
-Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
+Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
+de densité de population:
+
+```SQL
+CREATE OR replace FUNCTION categories () 
+RETURNS TABLE (country TEXT,pop INT, density INT, tranche TEXT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+RETURN query 
+SELECT table_country.country, table_country.pop, table_country.density, CASE
+WHEN table_country.density > 500 THEN 'tranche4'
+WHEN table_country.density > 400 THEN 'tranche3'
+WHEN table_country.density > 300 THEN 'tranche2'
+ELSE 'tranche1' END AS tranche
+FROM table_country;
+END;
+$$;
+```
+__On peux aussi créer la même fonction mais pour un seul pays de notre choix :__
+
+```SQL
+CREATE OR replace function categories (pays TEXT) 
+RETURNS TABLE (country TEXT,pop INT, density INT, tranche TEXT)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+RETURN query 
+SELECT table_country.country, table_country.pop, table_country.density, CASE
+WHEN table_country.density > 500 THEN 'tranche4'
+WHEN table_country.density > 400 THEN 'tranche3'
+WHEN table_country.density > 300 THEN 'tranche2'
+ELSE 'tranche1' END AS tranche
+FROM table_country WHERE table_country.country = pays;
+END;
+$$;
+```
 
 __c.__  
     
@@ -104,44 +139,9 @@ FOR EACH ROW EXECUTE PROCEDURE data_upload();
 ```
 
 __e.__
-    
-Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
-de densité de population:
 
-```SQL
-CREATE OR replace FUNCTION categories () 
-RETURNS TABLE (country TEXT,pop INT, density INT, tranche TEXT)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-RETURN query 
-SELECT table_country.country, table_country.pop, table_country.density, CASE
-WHEN table_country.density > 500 THEN 'tranche4'
-WHEN table_country.density > 400 THEN 'tranche3'
-WHEN table_country.density > 300 THEN 'tranche2'
-ELSE 'tranche1' END AS tranche
-FROM table_country;
-END;
-$$;
-```
-__On peux aussi créer la même fonction mais pour un seul pays de notre choix :__
-
-```SQL
-CREATE OR replace function categories (pays TEXT) 
-RETURNS TABLE (country TEXT,pop INT, density INT, tranche TEXT)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-RETURN query 
-SELECT table_country.country, table_country.pop, table_country.density, CASE
-WHEN table_country.density > 500 THEN 'tranche4'
-WHEN table_country.density > 400 THEN 'tranche3'
-WHEN table_country.density > 300 THEN 'tranche2'
-ELSE 'tranche1' END AS tranche
-FROM table_country WHERE table_country.country = pays;
-END;
-$$;
-```
+Il va falloir maintenant insérer les données de notre table :
+Pour celà il suffit de vous rendre sur [insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
 
 
 **4. Utilisation / Usage** 
