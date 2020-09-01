@@ -125,15 +125,15 @@ date de l'insertion.
 Tout d'abord la création d'une fonction :
 
 ```SQL
-CREATE OR replace PROCEDURE insert_data(pays TEXT)
+CREATE OR REPLACE FUNCTION data_upload() RETURNS trigger
 LANGUAGE plpgsql
 AS $$
 BEGIN
-INSERT INTO table_country(country,pop,density) VALUES (pays, random() * 10000, random() * 10000);
+NEW.upload := current_timestamp;
+RETURN NEW;
 END;
 $$;
 ```
-
 Puis nous allons importer notre Trigger après avoir exécuté la fonction ci-dessus :
 
 ```SQL
