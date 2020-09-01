@@ -97,20 +97,33 @@ Vous devez:
     END;
     $$;
     ```
+    On peux aussi créer la même fonction mais pour un seul pays de notre choix : 
 
-
-
-
-
+    ```SQL
+    CREATE OR replace function categories (pays TEXT) 
+    RETURNS TABLE (country TEXT,pop INT, density INT, tranche TEXT)
+    LANGUAGE plpgsql
+    AS $$
+    BEGIN
+    RETURN query 
+    SELECT table_country.country, table_country.pop, table_country.density, CASE
+    WHEN table_country.density > 500 THEN 'tranche4'
+    WHEN table_country.density > 400 THEN 'tranche3'
+    WHEN table_country.density > 300 THEN 'tranche2'
+    ELSE 'tranche1' END AS tranche
+    FROM table_country WHERE table_country.country = pays;
+    END;
+    $$;
+    ```
 
 
 **Utilisation** 
 
 Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete :
 
-```SQL
-SELECT * FROM "public"."table_country" LIMIT 300
-```
+    ```SQL
+    SELECT * FROM "public"."table_country" LIMIT 300
+    ```
 
 Ensuite 
 
