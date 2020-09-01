@@ -35,12 +35,14 @@ Vous devez:
 Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
 Entrez cette instruction puis éxecutez la grâce au bouton "execute" : 
 
-```CREATE TABLE IF NOT EXISTS "table_country" (
+```SQL
+CREATE TABLE IF NOT EXISTS "table_country" (
 "country" TEXT NULL,
 "pop" INT NULL,
 "density" INT NULL,
 "upload" TIMESTAMP
-);```
+);
+```
 
 
 
