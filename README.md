@@ -38,10 +38,10 @@
 **2. Prérequis**
 -----------------------------------------------------------------------------------------------------------------------------
 
-Vous devez: 
+**Vous devez :**
 
-            - Avoir un compte sur https://www.elephantsql.com/ 
-            - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
+                - Avoir un compte sur https://www.elephantsql.com/ 
+                - Avoir créé une instance toujours sur https://www.elephantsql.com/ (dans mon cas Europe => Irlande, car gratuit)
 
 
 **3. Installation**
@@ -49,8 +49,8 @@ Vous devez:
 
 __a.__  
     
-Une fois votre compte créé et votre instance initialisee, rendez-vous dans l'onglet " Browser" de ElephantSQL.
-Entrez cette instruction puis éxecutez la grâce au bouton "execute" : 
+Une fois votre compte créé et votre instance initialisée, rendez-vous dans l'onglet " Browser" de ElephantSQL.
+Entrez cette instruction puis éxecutez-la grâce au bouton "execute" : 
 
 ```SQL
 CREATE TABLE IF NOT EXISTS "table_country" (
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS "table_country" (
 
 __b.__  
 
-Enfin nous allons créer une fonction permettante de retourner les pays qui seront regroupés par tranches de 4 (à definir)
+Enfin nous allons créer une fonction permettant de retourner les pays qui seront regroupés par tranches de 4 (à definir)
 de densité de population:
 
 ```SQL
@@ -82,7 +82,7 @@ FROM table_country;
 END;
 $$;
 ```
-__On peux aussi créer la même fonction mais pour un seul pays de notre choix :__
+__On peut aussi créer la même fonction mais pour un seul pays de notre choix :__
 
 ```SQL
 CREATE OR replace function categories (pays TEXT) 
@@ -103,7 +103,7 @@ $$;
 
 __c.__  
     
-Nous allons maintenant importer la procèdure SQL ci dessous qui retourne le pays (sous format de TABLE) 
+Nous allons maintenant importer la procédure SQL ci-dessous qui retourne le pays (sous format de TABLE) 
 qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays : 
 
 ```SQL
@@ -133,7 +133,7 @@ __d.__
     
 Nous allons configurer un trigger qui va mettre à jour la colonne de la table correspondant à la 
 date de l'insertion.
-Tout dabord la création d'une fonction : 
+Tout d'abord la création d'une fonction : 
 
 ```SQL
 CREATE OR REPLACE FUNCTION data_upload() RETURNS trigger
@@ -145,7 +145,7 @@ RETURN NEW;
 END;
 $$;
 ```
-Puis nous allons importer notre Trigger après avoir éxecuter la fonction ci-dessus : 
+Puis nous allons importer notre Trigger après avoir exécuté la fonction ci-dessus : 
 
 ```SQL
 CREATE TRIGGER data_upload BEFORE INSERT OR UPDATE ON table_country      
@@ -155,45 +155,45 @@ FOR EACH ROW EXECUTE PROCEDURE data_upload();
 __e.__
 
 Il va falloir maintenant insérer les données de notre table :
-Pour celà il suffit de vous rendre sur le lien : <br/>
-[insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'éxecuter.
+Pour cela il suffit de vous rendre sur le lien : <br/>
+[insert_into](https://github.com/TOMCASS/P3_pays/blob/origin/developTom/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'exécuter.
 
 
 **4. Utilisation / Usage** 
 -----------------------------------------------------------------------------------------------------------------------------
 
 
-* Pour afficher le contenue de notre "table_country" il suffit d'éxecuter la requete (on précise 300 pour avoir l'intgralité des pays):
+* Pour afficher le contenue de notre "table_country" il suffit d'exécuter la requête (on précise 300 pour avoir l'intgralité des pays):
 
 ```SQL
 SELECT * FROM "public"."table_country" LIMIT 300
 ```
-* Pour afficher la ligne cmplète d'un pays (ici la Chine)
+* Pour afficher la ligne complète d'un pays (ici la Chine)
 
 ```SQL
 SELECT * FROM "table_country"
 WHERE country = 'China';
 ```
 
-* Requete à effectuer pour executer la 1ère fonction établie (ici la France)
+* Requête à effectuer pour executer la 1ère fonction établie (ici la France)
 
 ```SQL
 SELECT * FROM get_pays('France')
 ```
 
-* Requete à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
+* Requête à effectuer pour executer la procedure précedemment établie (ici le nouveau pays 'Coolzanie')
 
 ```SQL
 CALL insert_data('Coolzanie')
 ```
 
-* Requete à effectuer pour executer la 2ème fonction établie (ici la France)
+* Requête à effectuer pour executer la 2ème fonction établie (ici la France)
 
 ```SQL
 SELECT * FROM categories('France')
 ```
 
-* Requete à effectuer pour executer la 2ème fonction établie (ici tout les pays de la table "table_country")
+* Requête à effectuer pour executer la 2ème fonction établie (ici tout les pays de la table "table_country")
 
 ```SQL
 SELECT * FROM categories()
