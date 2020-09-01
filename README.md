@@ -16,12 +16,10 @@ Vous devez impérativement passer par le SAAS elephantsql (version gratuite)
 
 Vous devez :
 
-- Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère passé en paramètre.
-Ce paramètre est le nom du pays
-- Créer une procédure SQL qui insert un nouveau pays avec des données random (on précise uniquement le pays)
-- Configurer un trigger qui va mettre à jour la colonne de la table correspondant à la date de l'insertion
-- Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) 
-de densité de population
+                - Créer une fonction SQL qui retourne le pays (sous format de TABLE) qui correspond au critère passé en paramètre. Ce paramètre est le nom du pays
+                - Créer une procédure SQL qui insert un nouveau pays avec des données random (on précise uniquement le pays)
+                - Configurer un trigger qui va mettre à jour la colonne de la table correspondant à la date de l'insertion
+                - Réaliser une fonction ou procédure stoquée pour retourner les pays qui sont regroupés par 4 tranches (à definir) de densité de population
 
 
 
