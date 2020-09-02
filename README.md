@@ -167,7 +167,7 @@ __f.__
 
 Il va falloir maintenant insérer les données de notre table :
 Pour cela il suffit de vous rendre sur le lien : <br/>
-[insert_into](https://github.com/TOMCASS/P3_pays/blob/master/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'exécuter.
+[insert_into](https://github.com/TOMCASS/P3_pays/blob/master/creation_table/insert_into.sql), et de copier l'intégralité du fichier dans ElephantSQL sans oublier de l'exécuter.<br/><br/>
 
 
 
